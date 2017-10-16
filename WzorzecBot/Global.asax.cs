@@ -24,7 +24,7 @@ namespace GksKatowiceBot
         }
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-        //    Controllers.ThreadClass.SendThreadMessage();
+            Controllers.ThreadClass.SendThreadMessage();
         }
     }
 }
