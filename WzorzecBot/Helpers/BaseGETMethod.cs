@@ -268,8 +268,8 @@ namespace GksKatowiceBot.Helpers
                             var listTemp = new List<System.Linq.IGrouping<string, string>>();
                             var imageListTemp = new List<string>();
                             var titleListTemp = new List<IGrouping<string, string>>();
-                            index = hrefList.Count > 15 ? 15 : hrefList.Count;
-                            for (int i = 0; i < hrefList.Count; i++)
+                            index = imgList.Count > 15 ? 15 : imgList.Count;
+                            for (int i = 0; i < index; i++)
                             {
                                 if (dt.Rows[dt.Rows.Count - 1]["Wiadomosc1"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc2"].ToString() != hrefList[i].Key &&
                                     dt.Rows[dt.Rows.Count - 1]["Wiadomosc3"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc4"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc5"].ToString() != hrefList[i].Key &&
@@ -359,8 +359,7 @@ namespace GksKatowiceBot.Helpers
         public static IList<Attachment> GetCardsAttachmentsWydarzenia(ref List<IGrouping<string, string>> hrefList, bool newUser = false,string dataOd="",string dataDo="")
         {
             List<Attachment> list = new List<Attachment>();
-
-
+          
             string urlAddress = "http://uml.lodz.pl/kalendarz/"+dataOd.Replace("-","/");
 
             if (dataDo != "")
@@ -432,7 +431,7 @@ namespace GksKatowiceBot.Helpers
 
                 if (newUser == true)
                 {
-                    index = imgList.Count>20?20:imgList.Count;
+                    index = titleList.Count>20?20: titleList.Count;
                     if (dt.Rows.Count == 0)
                     {
                         //    AddWiadomosc(hrefList);
@@ -447,8 +446,8 @@ namespace GksKatowiceBot.Helpers
                         var listTemp = new List<System.Linq.IGrouping<string, string>>();
                         var imageListTemp = new List<string>();
                         var titleListTemp = new List<IGrouping<string, string>>();
-                        index = hrefList.Count > 15 ? 15 : hrefList.Count;
-                        for (int i = 0; i < hrefList.Count; i++)
+                        index = titleList.Count > 20 ? 20 : titleList.Count;
+                        for (int i = 0; i < index; i++)
                         {
                             if (dt.Rows[dt.Rows.Count - 1]["Wiadomosc1"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc2"].ToString() != hrefList[i].Key &&
                                 dt.Rows[dt.Rows.Count - 1]["Wiadomosc3"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc4"].ToString() != hrefList[i].Key && dt.Rows[dt.Rows.Count - 1]["Wiadomosc5"].ToString() != hrefList[i].Key &&
